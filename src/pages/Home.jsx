@@ -87,8 +87,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="px-4 md:px-8 flex flex-col md:flex-row gap-4 pb-10 -mt-16 z-10 relative">
-        <div className="md:mx-auto max-w-[960px] bg-white rounded-lg p-6">
+      <section className="px-4 md:px-8 flex flex-col md:flex-row gap-4 pb-10 -mt-16 z-10 relative md:justify-center">
+        <div className="bg-white rounded-lg p-6 max-w-[350px]">
           <h2 className="font-roboto-condensed text-xl md:text-2xl text-[#0B599B] mb-4 md:text-left text-center">
             {sobreNos.title}
           </h2>
@@ -96,7 +96,7 @@ export default function HomePage() {
             {sobreNos.description}
           </p>
         </div>
-        <div className="md:mx-auto max-w-[960px] bg-white rounded-lg p-6">
+        <div className="bg-white rounded-lg p-6 max-w-[350px]">
           <h2 className="font-roboto-condensed text-xl md:text-2xl text-[#0B599B] mb-4 md:text-left text-center">
             {sobreNos.title}
           </h2>
@@ -104,7 +104,7 @@ export default function HomePage() {
             {sobreNos.description}
           </p>
         </div>
-        <div className="md:mx-auto max-w-[960px] bg-white rounded-lg p-6">
+        <div className="bg-white rounded-lg p-6 max-w-[350px]">
           <h2 className="font-roboto-condensed text-xl md:text-2xl text-[#0B599B] mb-4 md:text-left text-center">
             {sobreNos.title}
           </h2>
