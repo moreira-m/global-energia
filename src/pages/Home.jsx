@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Placeholder from './../assets/placeholders-images/Horizontal-Placeholder-Image.jpg';
+import TeaserLogo from './../assets/teaser-logo.png';
 
 export default function HomePage() {
   const teaser = {
-    homeTitle: 'Energia limpa para um futuro melhor',
+    homeTitle: 'Economize até x% na sua conta de luz com',
     teaserBackground: Placeholder,
-    logo: '/assets/teaser-logo.svg',
+    logo: TeaserLogo,
     buttons: [
       { buttonText: 'Conheça nossos projetos', buttonUrl: '#projetos' },
       { buttonText: 'Fale Conosco', buttonUrl: '#contato' },
@@ -56,21 +57,21 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative pb-5 h-[500px]">
+      <section className="relative pb-16 h-fit">
         <img
           src={teaser.teaserBackground}
           alt=""
           className="absolute inset-0 w-full h-full object-cover aspect-[3/2]"
         />
 
-        <div className="relative z-10 mx-auto flex flex-col items-center justify-center w-8/12 max-w-[480px]">
-          <h1 className="mb-0 text-center font-roboto-condensed text-2xl lg:text-3xl text-white">
+        <div className="relative z-10 mx-auto flex flex-col items-center justify-center w-8/12 pt-6 md:pt-8  max-w-[350px]">
+          <h1 className="mb-0 text-center font-museo-sans-rounded text-[42px] lg:text-3xl text-white">
             {teaser.homeTitle}
           </h1>
           <img src={teaser.logo} alt="Logo" className="w-full mt-5 mb-5" />
         </div>
 
-        <div className="relative z-10 mx-auto mt-5 flex flex-col justify-center gap-5 w-8/12 max-w-[400px] h-[190px] bg-white rounded-[31px]">
+        <div className="relative z-10 mx-auto flex flex-col justify-center gap-5 w-8/12 max-w-[400px] h-[190px] bg-white rounded-[31px]">
           {teaser.buttons.map(({ buttonText, buttonUrl }, idx) => (
             <a
               key={buttonText}
@@ -87,8 +88,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="px-4 md:px-8 flex flex-col md:flex-row gap-4 pb-10 -mt-16 z-10 relative md:justify-center">
-        <div className="bg-white rounded-lg p-6 max-w-[350px]">
+      <section className="px-4 md:px-8 flex flex-col md:flex-row gap-4 pb-10 -mt-10 md:-mt-10 z-10 relative md:justify-center">
+        <div className="bg-white rounded-lg p-6 max-w-[350px] mx-auto md:mx-0">
           <h2 className="font-roboto-condensed text-xl md:text-2xl text-[#0B599B] mb-4 md:text-left text-center">
             {sobreNos.title}
           </h2>
@@ -96,7 +97,7 @@ export default function HomePage() {
             {sobreNos.description}
           </p>
         </div>
-        <div className="bg-white rounded-lg p-6 max-w-[350px]">
+        <div className="bg-white rounded-lg p-6 max-w-[350px] mx-auto md:mx-0">
           <h2 className="font-roboto-condensed text-xl md:text-2xl text-[#0B599B] mb-4 md:text-left text-center">
             {sobreNos.title}
           </h2>
@@ -104,7 +105,7 @@ export default function HomePage() {
             {sobreNos.description}
           </p>
         </div>
-        <div className="bg-white rounded-lg p-6 max-w-[350px]">
+        <div className="bg-white rounded-lg p-6 max-w-[350px] mx-auto md:mx-0">
           <h2 className="font-roboto-condensed text-xl md:text-2xl text-[#0B599B] mb-4 md:text-left text-center">
             {sobreNos.title}
           </h2>
