@@ -6,16 +6,15 @@ export default function Header() {
 
   return (
     <header>
-      <div className="header-container">
-        <img src="" alt="Logo" className="header-logo" />
-        <nav className="header-nav">
+      <div>
+        <img src="" alt="Logo" />
+        <nav>
           <button
-            className="hamburger-button"
             aria-label="Toggle Menu"
             onClick={toggleMenu}
           />
-          <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-              <li className="nav-item">
+          <ul>
+              <li>
               </li>
           </ul>
         </nav>
