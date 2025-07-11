@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import Placeholder from './../assets/placeholders-images/Horizontal-Placeholder-Image.jpg';
 
 export default function HomePage() {
   const teaser = {
     homeTitle: 'Energia limpa para um futuro melhor',
-    teaserBackground: '/assets/teaser-bg.jpg',
+    teaserBackground: Placeholder,
     logo: '/assets/teaser-logo.svg',
     buttons: [
       { buttonText: 'Conheça nossos projetos', buttonUrl: '#projetos' },
@@ -41,88 +42,103 @@ export default function HomePage() {
   };
 
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  const toggleFaq = (index) =>
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  const toggleFaq = (i) => setOpenFaqIndex(openFaqIndex === i ? null : i);
 
   return (
     <>
-      {/* Main Teaser Home */}
-      <section className="container home-teaser">
+      <section className="relative pb-5">
         <img
           src={teaser.teaserBackground}
-          alt="Teaser Background"
-          className="image home-teaser-image-bg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover aspect-[3/2]"
         />
-        <div className="container container-text">
-          <h1 className="text simple-h1">{teaser.homeTitle}</h1>
-          <img
-            src={teaser.logo}
-            alt="Logo"
-            className="image home-teaser-logo"
-          />
+
+        <div className="relative z-10 mx-auto flex flex-col items-center justify-center w-8/12 max-w-[480px]">
+          <h1 className="mb-0 text-center font-roboto-condensed text-2xl lg:text-3xl text-white">
+            {teaser.homeTitle}
+          </h1>
+          <img src={teaser.logo} alt="Logo" className="w-full mt-5 mb-5" />
         </div>
-        <div className="container container-box">
-          {teaser.buttons.map(({ buttonText, buttonUrl }) => (
-            <div key={buttonText} className="button">
-              <a href={buttonUrl} className="button-link">
-                {buttonText}
-              </a>
-            </div>
+
+        <div className="relative z-10 mx-auto mt-5 flex flex-col justify-center gap-5 w-8/12 max-w-[400px] h-[190px] bg-white rounded-[31px]">
+          {teaser.buttons.map(({ buttonText, buttonUrl }, idx) => (
+            <a
+              key={buttonText}
+              href={buttonUrl}
+              className={`flex items-center justify-center mx-auto px-4
+                          ${idx === 0 ? 'bg-[#E07719]' : 'bg-[#0B599B]'}
+                          h-8 md:h-10 md:w-[280px] rounded-md
+                          text-white font-roboto-condensed text-base md:text-lg
+                          transition-transform hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg`}
+            >
+              {buttonText}
+            </a>
           ))}
         </div>
       </section>
 
-      {/* About Us */}
-      <section className="container about-us">
-        <div className="container container-about-us">
-          <h2 className="text simple-h2">{sobreNos.title}</h2>
-          <p className="text simple-paragraph">{sobreNos.description}</p>
+      <section className="px-4 md:px-8">
+        <div className="mx-4 my-6 md:mx-auto max-w-[960px] bg-white rounded-lg p-6">
+          <h2 className="font-roboto-condensed text-xl md:text-2xl text-[#0B599B] mb-4 md:text-left text-center">
+            {sobreNos.title}
+          </h2>
+          <p className="font-roboto-condensed text-base md:text-lg text-black">
+            {sobreNos.description}
+          </p>
         </div>
       </section>
 
-      {/* Projects */}
-      <section className="container projects">
-        <div className="container container-projects">
-          <h2 className="text simple-h2">{projetos.title}</h2>
-          <div className="project-images">
-            <img
-              src={projetos.image1}
-              alt="Project Image 1"
-              className="project-image"
-            />
-            <img
-              src={projetos.image2}
-              alt="Project Image 2"
-              className="project-image"
-            />
+      <section className="bg-[#0B599B]">
+        <div className="flex flex-col gap-2 px-4 pt-10 pb-10">
+          <h2 className="font-roboto-condensed text-xl md:text-2xl text-white text-center mb-9">
+            {projetos.title}
+          </h2>
+
+          <div className="flex flex-col items-center gap-8 md:flex-row md:px-8 md:max-w-[960px] md:mx-auto">
+            {[projetos.image1, projetos.image2].map((img) => (
+              <img
+                key={img}
+                src={img}
+                alt=""
+                className="w-1/2 md:w-1/2 rounded-lg transition-transform hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg"
+              />
+            ))}
           </div>
+
           {projetos.buttons.map(({ buttonText, buttonUrl }) => (
-            <div key={buttonText} className="button">
-              <a href={buttonUrl} className="button-link">
-                {buttonText}
-              </a>
-            </div>
+            <a
+              key={buttonText}
+              href={buttonUrl}
+              className="mt-5 mx-auto px-4 h-8 md:h-10 md:w-[280px] flex items-center justify-center
+                         bg-[#E07719] rounded-md text-white font-roboto-condensed
+                         transition-transform hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              {buttonText}
+            </a>
           ))}
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="container faq">
-        <h2 className="text simple-h2">{faq.title}</h2>
-        {faq.listOfFaq.map(({ question, answer }, index) => (
-          <div key={question} className="faq-item">
-            <div
-              className="faq-question"
-              onClick={() => toggleFaq(index)}
-              style={{ cursor: 'pointer', fontWeight: 'bold' }}
+      <section className="px-4 md:px-8 py-10 max-w-[960px] mx-auto">
+        <h2 className="font-roboto-condensed text-xl md:text-2xl text-[#0B599B] mb-5">
+          {faq.title}
+        </h2>
+
+        {faq.listOfFaq.map(({ question, answer }, idx) => (
+          <div
+            key={question}
+            className="mb-4 rounded-lg bg-[#FFBC27] overflow-hidden"
+          >
+            <button
+              onClick={() => toggleFaq(idx)}
+              className="w-full text-left pl-4 py-2 font-roboto-condensed text-base md:text-lg text-white
+                         hover:text-[#0B599B] transition-colors"
             >
               {question}
-            </div>
-            {openFaqIndex === index && (
-              <div
-                className="faq-answer"
-                style={{ marginTop: '8px', paddingLeft: '16px' }}
-              >
+            </button>
+
+            {openFaqIndex === idx && (
+              <div className="bg-white pl-4 py-2 font-roboto-condensed text-base md:text-lg text-black">
                 {answer}
               </div>
             )}
