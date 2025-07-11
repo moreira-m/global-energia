@@ -5,7 +5,12 @@ export default {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'museo-sans-rounded': ['\'MuseoSansRounded\'', 'sans-serif'],
+        gotham: ['\'Gotham\'', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
