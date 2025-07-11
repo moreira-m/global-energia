@@ -12,8 +12,7 @@ export default function Footer() {
         <a href="/" className="h-12 flex items-center mb-4 md:mb-0">
           <img src={Logo} alt="Footer logo" className="h-full w-auto" />
         </a>
-        <p className="text-white text-center font-roboto-condensed text-sm md:text-base
-                      mb-4 md:mb-0">
+        <p className="text-white text-center text-sm md:text-base mb-4 md:mb-0">
           Todos os direitos reservados Global Energia LTDA 2025
         </p>
         <div className="flex items-center gap-4">

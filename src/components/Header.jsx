@@ -52,7 +52,7 @@ export default function Header() {
                 <a
                   href="#"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block w-full h-full text-center font-roboto-condensed text-white transition-all ${
+                  className={`block w-full h-full text-center text-white transition-all ${
                     isMenuOpen ? 'hover:text-black' : 'hover:underline'
                   }`}
                 >

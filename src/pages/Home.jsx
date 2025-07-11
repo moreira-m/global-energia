@@ -47,24 +47,24 @@ export default function HomePage() {
   return (
     <>
       {/* Main Teaser Home */}
-      <section className="container home-teaser">
+      <section className="container">
         <img
           src={teaser.teaserBackground}
           alt="Teaser Background"
-          className="image home-teaser-image-bg"
+
         />
-        <div className="container container-text">
-          <h1 className="text simple-h1">{teaser.homeTitle}</h1>
+        <div className="container">
+          <h1>{teaser.homeTitle}</h1>
           <img
             src={teaser.logo}
             alt="Logo"
-            className="image home-teaser-logo"
+
           />
         </div>
-        <div className="container container-box">
+        <div className="container">
           {teaser.buttons.map(({ buttonText, buttonUrl }) => (
-            <div key={buttonText} className="button">
-              <a href={buttonUrl} className="button-link">
+            <div key={buttonText}>
+              <a href={buttonUrl}>
                 {buttonText}
               </a>
             </div>
@@ -73,32 +73,30 @@ export default function HomePage() {
       </section>
 
       {/* About Us */}
-      <section className="container about-us">
-        <div className="container container-about-us">
-          <h2 className="text simple-h2">{sobreNos.title}</h2>
-          <p className="text simple-paragraph">{sobreNos.description}</p>
+      <section className="container">
+        <div className="container">
+          <h2>{sobreNos.title}</h2>
+          <p>{sobreNos.description}</p>
         </div>
       </section>
 
       {/* Projects */}
-      <section className="container projects">
-        <div className="container container-projects">
-          <h2 className="text simple-h2">{projetos.title}</h2>
-          <div className="project-images">
+      <section className="container">
+        <div className="container">
+          <h2>{projetos.title}</h2>
+          <div>
             <img
               src={projetos.image1}
               alt="Project Image 1"
-              className="project-image"
             />
             <img
               src={projetos.image2}
               alt="Project Image 2"
-              className="project-image"
             />
           </div>
           {projetos.buttons.map(({ buttonText, buttonUrl }) => (
-            <div key={buttonText} className="button">
-              <a href={buttonUrl} className="button-link">
+            <div key={buttonText}>
+              <a href={buttonUrl}>
                 {buttonText}
               </a>
             </div>
@@ -107,12 +105,11 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="container faq">
-        <h2 className="text simple-h2">{faq.title}</h2>
+      <section className="container">
+        <h2>{faq.title}</h2>
         {faq.listOfFaq.map(({ question, answer }, index) => (
-          <div key={question} className="faq-item">
+          <div key={question}>
             <div
-              className="faq-question"
               onClick={() => toggleFaq(index)}
               style={{ cursor: 'pointer', fontWeight: 'bold' }}
             >
@@ -120,7 +117,6 @@ export default function HomePage() {
             </div>
             {openFaqIndex === index && (
               <div
-                className="faq-answer"
                 style={{ marginTop: '8px', paddingLeft: '16px' }}
               >
                 {answer}
