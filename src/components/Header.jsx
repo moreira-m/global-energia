@@ -1,9 +1,25 @@
-function Header() {
+import React, { useState } from 'react';
+
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <header className="bg-blue-600 text-white p-4">
-      <h1 className="text-xl font-semibold">Global Energia</h1>
+    <header>
+      <div className="header-container">
+        <img src="" alt="Logo" className="header-logo" />
+        <nav className="header-nav">
+          <button
+            className="hamburger-button"
+            aria-label="Toggle Menu"
+            onClick={toggleMenu}
+          />
+          <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
+              <li className="nav-item">
+              </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }
-
-export default Header;

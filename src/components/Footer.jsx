@@ -1,9 +1,17 @@
-function Footer() {
+// src/components/Footer.tsx
+import React from 'react';
+
+export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white p-4 text-center">
-      <p>&copy; {new Date().getFullYear()} Global Energia Solar</p>
+    <footer>
+      <div className="footer-container">
+        <div className="footer-section">
+          <img src="" alt="Footer Logo" className="footer-logo" />
+        </div>
+        <div className="footer-section-3">
+          <p>Todos os direitos reservados Global Energia LTDA 2025</p>
+        </div>
+      </div>
     </footer>
   );
 }
-
-export default Footer;
