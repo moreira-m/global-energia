@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Placeholder from './../assets/placeholders-images/Horizontal-Placeholder-Image.jpg';
 import TeaserLogo from './../assets/teaser-logo.png';
+import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   const teaser = {
