@@ -23,8 +23,8 @@ export default function HomePage() {
 
   const projetos = {
     title: 'Projetos em Destaque',
-    image1: '/assets/project-1.jpg',
-    image2: '/assets/project-2.jpg',
+    image1: Placeholder,
+    image2: Placeholder,
     buttons: [{ buttonText: 'Ver todos os projetos', buttonUrl: '/projetos' }],
   };
 
