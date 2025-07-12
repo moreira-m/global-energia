@@ -47,3 +47,4 @@ Configure the following repository secrets so the workflows can deploy:
 - `NETLIFY_STAGING_SITE_ID`
 - `NETLIFY_PROD_SITE_ID`
 
+environment test
