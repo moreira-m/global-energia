@@ -4,7 +4,9 @@ import TeaserLogo from './../assets/teaser-logo.png';
 
 export default function HomePage() {
   const teaser = {
-    homeTitle: 'Economize até x% na sua conta de luz com',
+    homeTitleStart: 'Economize até ',
+    homeTitleHighlight: '30%',
+    homeTitleEnd: ' na sua conta de luz com energia solar',
     teaserBackground: Placeholder,
     logo: TeaserLogo,
     buttons: [
@@ -66,7 +68,9 @@ export default function HomePage() {
 
         <div className="relative z-10 mx-auto flex flex-col items-center justify-center w-8/12 pt-6 md:pt-8  max-w-[350px]">
           <h1 className="mb-0 text-center font-museo-sans-rounded text-[42px] lg:text-3xl text-white">
-            {teaser.homeTitle}
+            {teaser.homeTitleStart}
+            <span className='text-[#FFBC27] font-bold'>{teaser.homeTitleHighlight}</span>
+            {teaser.homeTitleEnd}
           </h1>
           <img src={teaser.logo} alt="Logo" className="w-full mt-5 mb-5" />
         </div>
@@ -78,7 +82,7 @@ export default function HomePage() {
               href={buttonUrl}
               className={`flex items-center justify-center mx-auto px-4
                           ${idx === 0 ? 'bg-[#E07719]' : 'bg-[#0B599B]'}
-                          h-10 md:w-[280px] rounded-md
+                          h-10 w-[230px] md:w-[280px] rounded-md
                           text-white font-gotham text-base md:text-lg
                           transition-transform hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg`}
             >
