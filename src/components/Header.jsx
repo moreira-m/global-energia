@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <header className="bg-[#0B599B]">
-      <div className="overflow-hidden h-[78px] flex flex-wrap items-center justify-between max-w-[1024px] mx-auto">
+      <div className="overflow-hidden h-[78px] flex flex-wrap items-center justify-between max-w-[1024px] mx-4 md:mx-auto">
         <a href="/" className="h-12 flex items-center md:ml-10">
           <img src={Logo} alt="Logo" className="h-full w-auto" />
         </a>
@@ -15,7 +15,7 @@ export default function Header() {
           <button
             aria-label="Toggle menu"
             onClick={toggleMenu}
-            className="md:hidden p-2 z-50 outline-none"
+            className="md:hidden p-2 z-50 outline-none fixed right-4"
           >
             <span
               className={`block w-[30px] h-[2px] bg-white transition-transform ${
@@ -52,7 +52,7 @@ export default function Header() {
                 <a
                   href="#"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block w-full h-full text-center font-gotham text-white transition-all ${
+                  className={`w-full h-full text-center font-gotham text-white transition-all items-center flex justify-center ${
                     isMenuOpen ? 'hover:text-black' : 'hover:underline'
                   }`}
                 >

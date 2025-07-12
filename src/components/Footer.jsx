@@ -6,9 +6,7 @@ import LinkedinLogo from './../assets/linkedin-icon.svg';
 export default function Footer() {
   return (
     <footer className="bg-[#2D2E31]">
-      <div className="overflow-hidden h-[78px] max-w-[1024px] mx-auto
-                      flex flex-col md:flex-row items-center justify-between
-                      px-4">
+      <div className="overflow-hidden h-[150px] md:h-[78px] max-w-[1024px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 my-6 md:my-4">
         <a href="/" className="h-12 flex items-center mb-4 md:mb-0">
           <img src={Logo} alt="Footer logo" className="h-full w-auto" />
         </a>
