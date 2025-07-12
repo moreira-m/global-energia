@@ -12,7 +12,7 @@ export default function AboutUs() {
 
     return (
         <section className='mt-auto flex'>
-            <div className="md:h-[70vh] flex flex-col md:flex-row items-center justify-center max-w-[1024px] mx-auto px-4 gap-16 md:gap-32 text-center md:text-left pt-6 md:p-0">
+            <div className="md:h-[82vh] flex flex-col md:flex-row items-center justify-center max-w-[1024px] mx-auto px-4 gap-16 md:gap-32 text-center md:text-left pt-6 md:p-0">
                 <div className="relative w-fit">
                     <span className="block bg-[#0B599B] text-white px-6 py-2 text-[46px] font-museo-sans-rounded leading-none relative left-[-10px]">
                         {aboutUs.aboutTitle.toUpperCase()}
