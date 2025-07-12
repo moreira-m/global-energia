@@ -27,6 +27,13 @@ Deployments are handled by Netlify using GitHub Actions.
 
 The staging URL uses a Netlify alias, typically `https://staging--<site>.netlify.app`.
 
+Workflows also support manual runs through the GitHub Actions UI:
+
+- **Deploy Staging** – run the `Deploy Staging` workflow to push the latest code
+  on the `stage` branch, or trigger a manual deployment.
+- **Deploy Production** – run the `Deploy Production` workflow to deploy the
+  `main` branch.
+
 You can also trigger manual deployments locally:
 
 ```bash
@@ -40,6 +47,3 @@ Configure the following repository secrets so the workflows can deploy:
 - `NETLIFY_STAGING_SITE_ID`
 - `NETLIFY_PROD_SITE_ID`
 
-
-TEST
-enviroment test
