@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
-import Logo from './../assets/global-energia-header.png'
+import Logo from './../assets/global-energia-header.png';
+import { Link } from 'react-router-dom';
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen((o) => !o);
+
+  const navLinks = [
+    { label: 'Início', href: '/' },
+    { label: 'Sobre nós', href: '/aboutUs' },
+    { label: 'Projetos', href: '/projetos' },
+  ];
 
   return (
     <header className="bg-[#0B599B]">
@@ -18,47 +26,41 @@ export default function Header() {
             className="md:hidden p-2 z-50 outline-none fixed right-4"
           >
             <span
-              className={`block w-[30px] h-[2px] bg-white transition-transform ${
-                isMenuOpen ? 'rotate-45 translate-y-[5px]' : ''
-              }`}
+              className={`block w-[30px] h-[2px] bg-white transition-transform ${isMenuOpen ? 'rotate-45 translate-y-[5px]' : ''
+                }`}
             />
             <span
-              className={`block w-[30px] h-[2px] bg-white my-1 transition-opacity ${
-                isMenuOpen ? 'opacity-0' : ''
-              }`}
+              className={`block w-[30px] h-[2px] bg-white my-1 transition-opacity ${isMenuOpen ? 'opacity-0' : ''
+                }`}
             />
             <span
-              className={`block w-[30px] h-[2px] bg-white transition-transform ${
-                isMenuOpen ? '-rotate-45 -translate-y-[5px]' : ''
-              }`}
+              className={`block w-[30px] h-[2px] bg-white transition-transform ${isMenuOpen ? '-rotate-45 -translate-y-[5px]' : ''
+                }`}
             />
           </button>
           <ul
-            className={`list-none p-0 m-0 ${
-              isMenuOpen
-                ? 'flex flex-col fixed inset-0 w-screen h-screen bg-[#0B599B] z-40 justify-center'
-                : 'hidden'
-            } md:flex md:static md:flex-row md:items-center md:gap-10 md:mr-10`}
+            className={`list-none p-0 m-0 ${isMenuOpen
+              ? 'flex flex-col fixed inset-0 w-screen h-screen bg-[#0B599B] z-40 justify-center'
+              : 'hidden'
+              } md:flex md:static md:flex-row md:items-center md:gap-10 md:mr-10`}
           >
-            {['Inicio', 'Sobre nós', 'Projetos'].map((label) => (
-              <li
-                key={label}
-                className={`my-2 md:my-0 ${
-                  isMenuOpen
-                    ? 'flex justify-center items-center w-[60%] mx-auto border border-white rounded-full h-[50px] transition-colors hover:bg-white'
-                    : ''
+            {navLinks.map(({ label, href }) => (<li
+              key={label}
+              to={href}
+              className={`my-2 md:my-0 ${isMenuOpen
+                ? 'flex justify-center items-center w-[60%] mx-auto border border-white rounded-full h-[50px] transition-colors hover:bg-white'
+                : ''
                 }`}
-              >
-                <a
-                  href="#"
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`w-full h-full text-center font-gotham text-white transition-all items-center flex justify-center ${
-                    isMenuOpen ? 'hover:text-black' : 'hover:underline'
+            >
+              <Link
+                to={href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`w-full h-full text-center font-gotham text-white transition-all items-center flex justify-center ${isMenuOpen ? 'hover:text-black' : 'hover:underline'
                   }`}
-                >
-                  {label}
-                </a>
-              </li>
+              >
+                {label}
+              </Link>
+            </li>
             ))}
           </ul>
         </nav>

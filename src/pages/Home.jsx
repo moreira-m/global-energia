@@ -12,7 +12,7 @@ export default function HomePage() {
     logo: TeaserLogo,
     buttons: [
       { buttonText: 'Faça um orçamento', buttonUrl: '#orçamento' },
-      { buttonText: 'Conheça nossos projetos', buttonUrl: '#projetos' },
+      { buttonText: 'Conheça nossos projetos', buttonUrl: '/projetos'},
     ],
   };
 
